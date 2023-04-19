@@ -1,0 +1,67 @@
+.box {
+  width: 500px;
+  height: 500px;
+  background-color: orange;
+}
+
+/* 가상클래스 선택자 */
+.box:hover {
+  /* 마우스 커서 올라왔을때 */
+  width: 300px;
+  background-color: royalblue;
+}
+
+.box:active {
+  /* 클릭하고 있는 동안 */
+  background-color: red;
+}
+
+input:focus {
+  /* html대화형 콘텐츠만 가능하다 ex) input */
+  /* html에서 태그에 tabindex="-1"으로 포커스가 되도록 변경할 수도 있음 */
+  background-color: orange;
+}
+.box::before {
+  /* 빈칸으로 두더라도 컨텐트는 무조건 있어야함 */
+  content: "front";
+}
+.box::after {
+  content: "back";
+}
+
+/* 속성선택자 */
+[type="password"] {
+  background-color: aqua;
+}
+[data-fruit-name] {
+  color: darkred;
+}
+
+.parent {
+  width: 300px;
+  height: 200px;
+  background-color: red;
+}
+
+.child {
+  width: 100px;
+  /* 부모속성 강제 상속 */
+  height: inherit;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  background-color: inherit;
+}
+
+/* 인라인 방식으로 선언하면 css에서 수정해도 점수가 낮아서 수정할 수 없음 */
+div.hello {
+  font-size: 70px;
+}
+.hello {
+  /* 10점 */
+  color: red;
+}
+/* 100점 */
+#hello {
+  color: blue;
+}
